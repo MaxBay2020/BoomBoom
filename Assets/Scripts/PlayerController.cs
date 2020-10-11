@@ -29,10 +29,14 @@ public class PlayerController : MonoBehaviour
 
     private bool hasShield = false;
 
+    public AudioClip walkClip, jumpClip;
+    private AudioSource audioSource;
+
     void Start()
     {
         rBody = this.GetComponent<Rigidbody2D>();
         anim = this.GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -42,12 +46,21 @@ public class PlayerController : MonoBehaviour
         //move code
         rBody.velocity = new Vector2(horiz * _speed, rBody.velocity.y);
 
+        if (horiz != 0 && !audioSource.isPlaying)
+        {
+            //play walk sound
+            audioSource.Play();
+        }
+
         //jump code
         isGrounded = GroundedCheck();
         if (isGrounded && Input.GetAxis("Jump") > 0)
         {
             rBody.AddForce(new Vector2(0, _jump_force));
             isGrounded = false;
+
+            //play jump sound
+            SoundManger.Instance.PlayJumpSound();
         }
 
         //run in different direction

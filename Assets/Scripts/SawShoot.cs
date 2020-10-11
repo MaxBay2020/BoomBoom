@@ -8,17 +8,25 @@ public class SawShoot : Saw
     private Vector3 position;
     private Quaternion rotation;
     public float waiting;
+    public AudioClip explosionClip;
+    private AudioSource audioSource;
 
     private void Start()
     {
         position = this.transform.position;
         rotation = this.transform.rotation;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Explosion" || collision.gameObject.tag == "Player")
         {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(explosionClip);
+            }
+
             GameObject explosion = Instantiate(explosionPrefab, this.transform.position, Quaternion.identity);
             this.GetComponent<SpriteRenderer>().enabled = false;
             this.GetComponent<Collider2D>().enabled = false;

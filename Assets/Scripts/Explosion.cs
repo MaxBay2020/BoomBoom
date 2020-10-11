@@ -26,6 +26,9 @@ public class Explosion : MonoBehaviour
         {
             GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
+            //play explosion sound
+            SoundManger.Instance.PlayRockExplosionSound();
+
             shakeImpulse.GenerateImpulse();
 
             Destroy(this.gameObject);
