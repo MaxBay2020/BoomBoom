@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OpenAnimation
+  m_Name: ChestAnimation
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,21 +21,21 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: 351abf0ea3f717641bda51db399aeb5a, type: 3}
-    - time: 0.1
+    - time: 0.06666667
       value: {fileID: 21300000, guid: d2f2664bbd0314a4e9212307d6a3fdab, type: 3}
-    - time: 0.18333334
+    - time: 0.13333334
       value: {fileID: 21300000, guid: 832b665cf5c35fa419865a672fb5a45c, type: 3}
-    - time: 0.28333333
+    - time: 0.18333334
       value: {fileID: 21300000, guid: e073f4043b3c1354686817ae3b211be2, type: 3}
-    - time: 0.36666667
+    - time: 0.25
       value: {fileID: 21300000, guid: 44cd567155ef74e46a696da36df1a266, type: 3}
-    - time: 0.46666667
+    - time: 0.31666666
       value: {fileID: 21300000, guid: d11f179f1bba047408fe95b0bb2b7f5e, type: 3}
-    - time: 0.56666666
+    - time: 0.36666667
       value: {fileID: 21300000, guid: eca487b2e523ad642a10f7d521a94fb2, type: 3}
-    - time: 0.65
+    - time: 0.43333334
       value: {fileID: 21300000, guid: ced74a61b2ead6d44aa347c46c93572b, type: 3}
-    - time: 0.75
+    - time: 0.5
       value: {fileID: 21300000, guid: 8c9da4ba7313f5e49a40922be2590358, type: 3}
     attribute: m_Sprite
     path: 
@@ -70,12 +70,12 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.76666665
+    m_StopTime: 0.51666665
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 0
+    m_LoopTime: 1
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
