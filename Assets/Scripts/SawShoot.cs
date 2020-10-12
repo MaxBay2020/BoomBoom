@@ -24,7 +24,7 @@ public class SawShoot : Saw
         {
             if (!audioSource.isPlaying)
             {
-                audioSource.PlayOneShot(explosionClip);
+                audioSource.PlayOneShot(explosionClip, 10);
             }
 
             GameObject explosion = Instantiate(explosionPrefab, this.transform.position, Quaternion.identity);

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8086637489627990087}
   - component: {fileID: 8086637489627990086}
   - component: {fileID: 1835358328}
+  - component: {fileID: 33356890}
   m_Layer: 0
   m_Name: coin1
   m_TagString: Untagged
@@ -43,7 +44,7 @@ Animator:
   m_GameObject: {fileID: 8086637489627990089}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 76860e440bf6e4e29824b98e9054be38, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -90,8 +91,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -707262777
-  m_SortingLayer: 4
-  m_SortingOrder: 2
+  m_SortingLayer: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: 3410510333891505588, guid: 27fbd349247c8dc46a3112ada3a53fc7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -115,5 +116,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c645221f998419683de621bb770cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _range: 0.2
+  _range: 0.5
   _durationTime: 1.5
+--- !u!61 &33356890
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8086637489627990089}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.64, y: 0.64}
+  m_EdgeRadius: 0

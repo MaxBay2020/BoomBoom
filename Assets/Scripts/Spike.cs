@@ -11,6 +11,7 @@ public class Spike : MonoBehaviour
     {
         if(collision.gameObject.tag=="Tilemap" || collision.gameObject.tag == "Player" || collision.gameObject.tag == "Shield")
         {
+            SoundManger.Instance.PlaySpikesExplosionSound();
             GameObject explosion = Instantiate(exlosionPrefab, transform.position, Quaternion.identity);
             Destroy(explosion, 0.3f);
             Destroy(this.gameObject);

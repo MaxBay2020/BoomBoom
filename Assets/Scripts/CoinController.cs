@@ -14,4 +14,15 @@ public class CoinController : MonoBehaviour
         this.transform.DOMoveY(transform.position.y+ _range, _durationTime).SetLoops(-1, LoopType.Yoyo);
     }
 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            //play sound
+            SoundManger.Instance.PlayCoinSound();
+
+            Destroy(this.gameObject);
+        }
+    }
 }

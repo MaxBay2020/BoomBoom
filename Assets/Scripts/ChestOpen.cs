@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChestOpen : MonoBehaviour
 {
     private Animator anim;
+    private bool isOpen;
 
     private void Start()
     {
@@ -16,6 +17,12 @@ public class ChestOpen : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             anim.SetBool("playerTouch", true);
+            if (!isOpen)
+            {
+                //play sound
+                SoundManger.Instance.PlayCoinSound();
+            }
+            isOpen = true;
         }
     }
 }

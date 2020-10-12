@@ -5,10 +5,12 @@ using UnityEngine;
 public class LeftWall : MonoBehaviour
 {
     private Cinemachine.CinemachineCollisionImpulseSource MyInpulse;
+    private AudioSource audioSource;
 
     private void Start()
     {
         MyInpulse = GetComponent<Cinemachine.CinemachineCollisionImpulseSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     //hit the ground, shake vCamera
@@ -17,6 +19,7 @@ public class LeftWall : MonoBehaviour
         if (collision.gameObject.tag == "Tilemap")
         {
             MyInpulse.GenerateImpulse();
+            audioSource.Play();
         }
     }
 

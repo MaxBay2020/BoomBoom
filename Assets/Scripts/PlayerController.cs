@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
     private bool hasShield = false;
 
-    public AudioClip walkClip, jumpClip;
+    public AudioClip dieClip;
     private AudioSource audioSource;
 
     void Start()
@@ -59,7 +59,8 @@ public class PlayerController : MonoBehaviour
             rBody.AddForce(new Vector2(0, _jump_force));
             isGrounded = false;
 
-            //play jump sound
+            //play jump sound, stop walk sound
+            audioSource.Pause();
             SoundManger.Instance.PlayJumpSound();
         }
 
@@ -106,19 +107,19 @@ public class PlayerController : MonoBehaviour
         //die from spike
         if (collision.gameObject.tag == "Spike" && !hasShield)
         {
-            Debug.Log("die from spike");
+            audioSource.PlayOneShot(dieClip, 10);
         }
 
         //die from saw
         if (collision.gameObject.tag == "Saw")
         {
-            Debug.Log("die from saw");
+            audioSource.PlayOneShot(dieClip,10);
         }
 
         //die from river
         if (collision.gameObject.tag == "River")
         {
-            Debug.Log("die from drawning");
+            audioSource.PlayOneShot(dieClip,10);
         }
 
 

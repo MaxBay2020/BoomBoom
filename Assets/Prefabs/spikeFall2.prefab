@@ -145,3 +145,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exlosionPrefab: {fileID: 139366, guid: 914db9f445a0f4198a88c96d994cb367, type: 3}
+  explodeClip: {fileID: 8300000, guid: ee15d44f52076de429349edc81c43fa1, type: 3}
