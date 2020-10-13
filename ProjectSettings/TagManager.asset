@@ -15,6 +15,7 @@ TagManager:
   - Shield
   - Saw
   - River
+  - Coin
   layers:
   - Default
   - TransparentFX
