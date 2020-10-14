@@ -7,7 +7,7 @@ public class SpikeFall : MonoBehaviour
     public List<Transform> fallPos;
     public GameObject[] spikes;
 
-    private bool start;
+    private bool start = false;
 
     public float tempTime;
     //public float timeSpan = 4;
@@ -42,12 +42,20 @@ public class SpikeFall : MonoBehaviour
     //player enter and stay at the zone, spikes fall
     private void OnTriggerStay2D(Collider2D collision)
     {
-        start = true;
+        if (collision.gameObject.tag == "Player")
+        {
+            start = true;
+        }
+
     }
 
     //player leave the zone, spikes top to fall
     private void OnTriggerExit2D(Collider2D collision)
     {
-        start = false;
+        if (collision.gameObject.tag == "Player")
+        {
+            start = false;
+        }
+
     }
 }

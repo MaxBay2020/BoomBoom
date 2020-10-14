@@ -8,11 +8,11 @@ public class CameraFrame : MonoBehaviour
     [SerializeField] private GameObject vCamera;
 
     //list of all vcameras
-    private GameObject[] vCameras;
+    public GameObject[] vCameras;
 
     private void Start()
     {
-        vCameras = GameObject.FindGameObjectsWithTag("VCamera");
+        //vCameras = GameObject.FindGameObjectsWithTag("VCamera");
 
     }
     //when player enter, switch camera

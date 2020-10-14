@@ -28,10 +28,10 @@ public class ChestOpen : MonoBehaviour
             {
                 //play sound
                 SoundManger.Instance.PlayCoinSound();
+
                 //score to UI
                 score++;
                 numberOfChest.gameObject.transform.DOScale(1.5f, 0.2f);
-                //numberOfChest.gameObject.transform.DOScale(1f, 0.2f);
                 StartCoroutine(Effect());
 
                 numberOfChest.text = score + "";
