@@ -107,19 +107,31 @@ public class PlayerController : MonoBehaviour
         //die from spike
         if (collision.gameObject.tag == "Spike" && !hasShield)
         {
+            //play sound
             audioSource.PlayOneShot(dieClip, 10);
+
+            //reborn
+            StartCoroutine(RebornAfterSeconds());
         }
 
         //die from saw
         if (collision.gameObject.tag == "Saw")
         {
+            //play sound
             audioSource.PlayOneShot(dieClip,10);
+
+            //reborn
+            StartCoroutine(RebornAfterSeconds());
         }
 
         //die from river
         if (collision.gameObject.tag == "River")
         {
+            //play sound
             audioSource.PlayOneShot(dieClip,10);
+
+            //reborn
+            StartCoroutine(RebornAfterSeconds());
         }
 
 
@@ -131,6 +143,19 @@ public class PlayerController : MonoBehaviour
             shield.transform.SetParent(this.transform);
             hasShield = true;
         }
+    }
+
+    //player reborn to last save point
+    private void Reborn()
+    {
+        Transform rebornPoint = SavePointsManager.Instance.savePoints[SavePointsManager.Instance.savePoints.Count - 1];
+        this.transform.position = rebornPoint.position;
+    }
+
+    IEnumerator RebornAfterSeconds()
+    {
+        yield return new WaitForSeconds(0.2f);
+        Reborn();
     }
 
 }

@@ -27,7 +27,8 @@ public class ChestOpen : MonoBehaviour
             if (!isOpen)
             {
                 //play sound
-                SoundManger.Instance.PlayCoinSound();
+                //SoundManger.Instance.PlayCoinSound();
+                SoundManger.Instance.ChestOpenSound();
 
                 //score to UI
                 score++;

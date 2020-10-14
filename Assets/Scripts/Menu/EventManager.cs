@@ -12,6 +12,7 @@ public class EventManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         creditPanel.DOMoveY(0, 0.5f).SetAutoKill(false).SetEase(Ease.OutBack).Pause();
     }
 
@@ -20,6 +21,7 @@ public class EventManager : MonoBehaviour
     {
         SoundManager.Instance.OnMouseClick();
         SceneManager.LoadScene("main");
+        Time.timeScale = 1;
     }
 
     //player exit game

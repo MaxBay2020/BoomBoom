@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManger : MonoBehaviour
 {
-    public AudioClip walkClip, jumpClip, chestClip;
+    public AudioClip jumpClip, chestClip, savePointClip;
     public AudioClip[] explosionClips;
     public AudioClip[] coinClip;
     public GameObject player;
@@ -12,7 +12,7 @@ public class SoundManger : MonoBehaviour
     public GameObject sawExplosionSoundPos;
     public GameObject spikesPos;
     public Camera mainCamera;
-
+    public AudioClip mouseOverClip, clickClip;
 
     private static SoundManger _instance;
 
@@ -32,7 +32,7 @@ public class SoundManger : MonoBehaviour
     //play jump sound
     public void PlayJumpSound()
     {
-        AudioSource.PlayClipAtPoint(jumpClip, mainCamera.transform.position);
+        AudioSource.PlayClipAtPoint(jumpClip, mainCamera.transform.position, 0.2f);
     }
 
     //play rock explosion sound
@@ -57,5 +57,34 @@ public class SoundManger : MonoBehaviour
     public void PlayCoinSound()
     {
         AudioSource.PlayClipAtPoint(coinClip[Random.Range(0,coinClip.Length-1)], mainCamera.transform.position);
+    }
+
+    //play chest open sound
+    public void ChestOpenSound()
+    {
+        AudioSource.PlayClipAtPoint(chestClip, mainCamera.transform.position,0.5f);
+    }
+
+    //play save point sound
+    public void SavePointSound()
+    {
+        AudioSource.PlayClipAtPoint(savePointClip, mainCamera.transform.position, 1);
+    }
+
+
+    /// <summary>
+    /// mouse over sound
+    /// </summary>
+    public void OnMouseOver()
+    {
+        AudioSource.PlayClipAtPoint(mouseOverClip, mainCamera.transform.position,0.5f);
+    }
+
+    /// <summary>
+    /// click sound
+    /// </summary>
+    public void OnMouseClick()
+    {
+        AudioSource.PlayClipAtPoint(clickClip, mainCamera.transform.position, 0.5f);
     }
 }
