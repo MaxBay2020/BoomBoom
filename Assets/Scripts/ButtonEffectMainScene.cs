@@ -13,7 +13,7 @@ public class ButtonEffectMainScene : MonoBehaviour, IPointerEnterHandler, IPoint
         transform.DOScale(1.1f, 0.3f);
         transform.GetComponent<Image>().DOFade(1, 0.3f);
         //play sound
-        SoundManger.Instance.OnMouseOver();
+        SoundManger.Instance.OnMouseOverSound();
     }
 
     //mouse leave event

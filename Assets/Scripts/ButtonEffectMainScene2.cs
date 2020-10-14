@@ -20,7 +20,7 @@ public class ButtonEffectMainScene2 : MonoBehaviour, IPointerEnterHandler, IPoin
         anim.SetBool("MouseOver", true);
 
         //play sound
-        SoundManger.Instance.OnMouseOver();
+        SoundManger.Instance.OnMouseOverSound();
     }
 
     //mouse leave event

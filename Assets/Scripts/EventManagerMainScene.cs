@@ -17,7 +17,7 @@ public class EventManagerMainScene : MonoBehaviour
         greyBG.GetComponent<Image>().raycastTarget = true;
 
         //play sound
-        SoundManger.Instance.OnMouseClick();
+        SoundManger.Instance.OnMouseClickSound();
 
         //show buttons
         foreach (RectTransform button in buttons)
@@ -46,14 +46,14 @@ public class EventManagerMainScene : MonoBehaviour
         Time.timeScale = 1;
 
         //play sound
-        SoundManger.Instance.OnMouseClick();
+        SoundManger.Instance.OnMouseClickSound();
     }
 
     //retry button click event
     public void RetryOnClick()
     {
         //play sound
-        SoundManger.Instance.OnMouseClick();
+        SoundManger.Instance.OnMouseClickSound();
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name+"");
 
@@ -65,7 +65,7 @@ public class EventManagerMainScene : MonoBehaviour
     public void GoToMenuOnClick()
     {
         //play sound
-        SoundManger.Instance.OnMouseClick();
+        SoundManger.Instance.OnMouseClickSound();
 
         SceneManager.LoadScene("Menu");
     }

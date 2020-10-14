@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManger : MonoBehaviour
 {
-    public AudioClip jumpClip, chestClip, savePointClip;
+    public AudioClip jumpClip, chestClip, savePointClip, destinationClip;
     public AudioClip[] explosionClips;
     public AudioClip[] coinClip;
     public GameObject player;
@@ -75,7 +75,7 @@ public class SoundManger : MonoBehaviour
     /// <summary>
     /// mouse over sound
     /// </summary>
-    public void OnMouseOver()
+    public void OnMouseOverSound()
     {
         AudioSource.PlayClipAtPoint(mouseOverClip, mainCamera.transform.position,0.5f);
     }
@@ -83,8 +83,14 @@ public class SoundManger : MonoBehaviour
     /// <summary>
     /// click sound
     /// </summary>
-    public void OnMouseClick()
+    public void OnMouseClickSound()
     {
         AudioSource.PlayClipAtPoint(clickClip, mainCamera.transform.position, 0.5f);
+    }
+
+    //destination clip sound
+    public void OnDestinationArriveSound()
+    {
+        AudioSource.PlayClipAtPoint(destinationClip, mainCamera.transform.position, 0.5f);
     }
 }
