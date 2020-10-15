@@ -14,8 +14,8 @@ public class SavePoint : MonoBehaviour
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        savingText.gameObject.SetActive(false);
-        savingImage.gameObject.SetActive(false);
+        //savingText.gameObject.SetActive(false);
+        //savingImage.gameObject.SetActive(false);
 
     }
 
