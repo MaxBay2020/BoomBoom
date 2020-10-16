@@ -9,7 +9,7 @@ public class ChestOpen : MonoBehaviour
     private Animator anim;
     private bool isOpen;
     public Text numberOfChest;
-    private int score = 0;
+    private int score;
     public GameObject chestTotalAmount;
     public Text chestTotalAmountTxt;
 
@@ -17,6 +17,7 @@ public class ChestOpen : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         chestTotalAmountTxt.text = "/" + chestTotalAmount.transform.childCount;
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,10 +32,9 @@ public class ChestOpen : MonoBehaviour
                 SoundManger.Instance.ChestOpenSound();
 
                 //score to UI
+                score = int.Parse(numberOfChest.text);
                 score++;
-                numberOfChest.gameObject.transform.DOScale(1.5f, 0.2f);
-                StartCoroutine(Effect());
-
+                numberOfChest.gameObject.transform.DOPunchScale(new Vector3(0.2f,0.2f,0), 0.4f, 10,1);
                 numberOfChest.text = score + "";
             }
             isOpen = true;            

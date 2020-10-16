@@ -16,6 +16,7 @@ TagManager:
   - Saw
   - River
   - Coin
+  - FloatingIsland
   layers:
   - Default
   - TransparentFX
